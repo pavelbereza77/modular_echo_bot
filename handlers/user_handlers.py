@@ -5,6 +5,7 @@ from lexicon.lexicon import LEXICON_RU
 
 # Инициализируем роутер уровня модуля
 router = Router()
+# print(router)
 
 
 # Этот хэндлер срабатывает на команду /start
