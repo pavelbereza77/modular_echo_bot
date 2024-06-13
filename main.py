@@ -2,7 +2,7 @@ import asyncio
 
 from aiogram import Bot, Dispatcher
 from config_data.config import Config, load_config
-from handlers import other_handlers, user_handlers
+from handlers import other_handlers, user_handlers, del_menu_handler
 
 
 # Функция конфигурирования и запуска бота
@@ -16,6 +16,7 @@ async def main() -> None:
     dp = Dispatcher()
 
     # Регистриуем роутеры в диспетчере
+    dp.include_router(del_menu_handler.router)
     dp.include_router(user_handlers.router)
     dp.include_router(other_handlers.router)
     #порядок регтстрации роутеров важен
